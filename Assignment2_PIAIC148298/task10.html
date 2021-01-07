@@ -1,0 +1,50 @@
+<html> 
+<head> 
+    <meta charset="utf-8">    
+  
+    <style> 
+    html { 
+        font-family: sans-serif; 
+    } 
+      
+    body { 
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+  
+<div class="form"> 
+    <label for="txtPassword">Enter Password: </label> 
+    <input type = "text" id = "txtPassword"> 
+    <input type = "submit" value = "Submit Password" id = "submitPassword"> 
+</div> 
+  
+<script type = "text/javascript">   
+      
+    document.getElementById("submitPassword").onclick = function(){              
+        var savedPassword = "123har%$#";
+        var password = document.getElementById("txtPassword").value;       
+
+       if(password.length<1)
+       {
+            alert("Please enter your password.")
+       }
+       else
+       {
+            if(password===savedPassword){
+                alert("Correct Password");
+            }
+            else{
+                alert("Incorrect Password");
+            }
+        }
+
+    }    
+</script> 
+</body>
+</html>

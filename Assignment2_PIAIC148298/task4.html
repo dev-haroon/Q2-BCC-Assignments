@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style type="text/css">
+ 
+            table, td {
+            border: 1px solid black;
+            }
+
+            table {
+            border-collapse: collapse;
+            
+            }
+
+            td {
+                width: 180px;
+            }
+        </style>
+
+        <script>
+            function getReport() {
+              
+              var totalMarks = parseInt(document.forms["myForm"]["totalMarks"].value);
+              var english = parseInt(document.forms["myForm"]["english"].value);
+              var maths = parseInt(document.forms["myForm"]["maths"].value);
+              var physics = parseInt(document.forms["myForm"]["physics"].value);
+               var sum  = english + maths+physics;
+               var markSheet = null;
+              //alert(totalMarks+":"+english+":"+maths+":"+physics);
+              var per = Math.round((sum / totalMarks)*100);
+              //alert(per);
+              if(per >= 80)
+              {
+                  //alert("Grade: "+"A-One "+"Remarks: Excellent");
+                  markSheet ="Total Marks: "+totalMarks+"<br>";
+                  markSheet +="Marks Obtained: "+sum+"<br>";
+                  markSheet +="Percentage: "+per+"% <br>";
+                  markSheet +="Grade: A-One <br>";
+                  markSheet +="Remarks: Excellent <br>";
+                  document.getElementById("markSheet").innerHTML = markSheet;
+              }
+              else if(per >= 70)
+              {
+                  //alert("Grade: "+"A "+"Remarks: Good");
+                  markSheet ="Total Marks: "+totalMarks+"<br>";
+                  markSheet +="Marks Obtained: "+sum+"<br>";
+                  markSheet +="Percentage: "+per+"% <br>";
+                  markSheet +="Grade: A <br>";
+                  markSheet +="Remarks: Good <br>";
+                  document.getElementById("markSheet").innerHTML = markSheet;
+              }
+              else if(per >= 60)
+              {
+                  //alert("Grade: "+"B "+"Remarks: You need to improve");
+                  markSheet ="Total Marks: "+totalMarks+"<br>";
+                  markSheet +="Marks Obtained: "+sum+"<br>";
+                  markSheet +="Percentage: "+per+"% <br>";
+                  markSheet +="Grade: B <br>";
+                  markSheet +="Remarks: You need to improve <br>";
+                  document.getElementById("markSheet").innerHTML = markSheet;
+              }
+              else 
+              {
+                  //alert("Grade: "+"Fail "+"Remarks: Sorry!!! ");
+                  markSheet ="Total Marks: "+totalMarks+"<br>";
+                  markSheet +="Marks Obtained: "+sum+"<br>";
+                  markSheet +="Percentage: "+per+"% <br>";
+                  markSheet +="Grade: Fail <br>";
+                  markSheet +="Remarks: Sorry!!! <br>";
+                  document.getElementById("markSheet").innerHTML = markSheet;
+              }
+              return false;
+            }
+            </script>
+    </head>
+    <body>
+
+            <div id="markSheet"> </div>
+            <form onsubmit="return getReport()" name="myForm" method="post">
+                <table>
+                    
+                    <tr>
+                        <td> <strong> Total Marks </strong> <input type="text" name="totalMarks" ></td>
+                    </tr>
+                    <tr>
+                        <td> English  <input type="text" name="english" > </td>
+                    </tr>
+                    <tr>
+                        <td> Maths  <input type="text" name="maths" > </td>
+                    </tr>
+                    <tr>
+                        <td> Physics  <input type="text" name="physics" > </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="submit" value="SUBMIT"> </td>
+                    </tr>
+                </table>
+            </form>
+    </body>
+
+    </html>      

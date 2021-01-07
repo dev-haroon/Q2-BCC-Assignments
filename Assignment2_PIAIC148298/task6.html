@@ -1,0 +1,42 @@
+<html> 
+<head> 
+    <meta charset="utf-8">    
+  
+    <style> 
+    html { 
+        font-family: sans-serif; 
+    } 
+      
+    body { 
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+  
+<div class="form"> 
+    <label for="txtNumber">Enter a Number: </label> 
+    <input type = "text" id = "txtNumber"> 
+    <input type = "submit" value = "Submit Number" id = "submitNumber"> 
+</div> 
+  
+<script type = "text/javascript">   
+      
+    document.getElementById("submitNumber").onclick = function(){              
+        var x = document.getElementById("txtNumber").value;     
+        if(x %2==0) 
+        {     
+            alert(x +" is an even number"); 
+        } 
+        else 
+        { 
+            alert(x +" is an odd number"); 
+        }         
+    }    
+</script> 
+</body>
+</html>

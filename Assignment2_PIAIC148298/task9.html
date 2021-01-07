@@ -1,0 +1,42 @@
+<html> 
+<head> 
+    <meta charset="utf-8">    
+  
+    <style> 
+    html { 
+        font-family: sans-serif; 
+    } 
+      
+    body { 
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+  
+<div class="form"> 
+    <label for="txtNumber">Enter a Number: </label> 
+    <input type = "text" id = "txtCharacter"> 
+    <input type = "submit" value = "Submit Character" id = "submitCharacter"> 
+</div> 
+  
+<script type = "text/javascript">   
+      
+    document.getElementById("submitCharacter").onclick = function(){              
+        var char = document.getElementById("txtCharacter").value;     
+        
+        if (char.length == 1)
+        {
+            var vowels = "aeiou";
+            var isVowel = vowels.indexOf(char) >= 0 ? true : false;
+
+            alert(isVowel);
+        }
+    }    
+</script> 
+</body>
+</html>

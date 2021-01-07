@@ -1,0 +1,67 @@
+<html> 
+<head> 
+    <meta charset="utf-8">    
+  
+    <style> 
+    html { 
+        font-family: sans-serif; 
+    } 
+      
+    body { 
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+  
+<div class="form"> 
+    <label for="txtFirstOperand">First Operand: </label> 
+    <input type = "text" id = "txtFirstOperand"> 
+    <label for="txtSecondOperand">Second Operand: </label> 
+    <input type = "text" id = "txtSecondOperand"> 
+    <select name="cars" id="ddlOperators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>        
+        <option value="%">%</option>
+      </select>
+      
+    <input type = "submit" value = "Calculator" id = "submitCalculator"> 
+</div> 
+  
+<script type = "text/javascript">   
+      
+    document.getElementById("submitCalculator").onclick = function(){              
+        
+        var firstOperand = parseInt(document.getElementById("txtFirstOperand").value);
+        var secondOperand = parseInt(document.getElementById("txtSecondOperand").value);
+        var operator = document.getElementById("ddlOperators").value;       
+
+        var result = null;
+        
+        if (operator == '+') {
+            result = firstOperand + secondOperand;
+        }
+        else if (operator == '-') {
+            result = firstOperand - secondOperand;
+        }
+        else if (operator == '*') {
+            result = firstOperand * secondOperand;
+        }
+        else if (operator == '/'){
+            result = firstOperand / secondOperand;
+        }
+        else if (operator == '%'){
+            result = firstOperand % secondOperand;
+        }
+        alert("Answer: "+result);
+        //document.getElementById("pAns").innerHTML = result;        
+    }    
+</script> 
+</body>
+</html>

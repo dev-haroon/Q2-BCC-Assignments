@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            function getColor() {
+              
+              var color = document.forms["myForm"]["txtColor"].value;
+             
+              if(color == "Red")
+              {
+                  alert("Must Stop");
+              }
+              else if(color == "Green")
+              {
+                  alert("Ready to move");
+              }
+              else if(color == "Yellow")
+              {
+                  alert("Move now");
+              }
+              return false;
+            }
+            </script>
+    </head>
+    <body>   
+        
+
+        <form onsubmit="return getColor()" name="myForm" method="post">
+                <table>
+                    
+                    <tr>
+                        <td> <strong> Enter Color: </strong> <input type="text" name="txtColor" ></td>
+                    </tr>
+                    
+                    <tr>
+                        <td> <input type="submit" value="SUBMIT"> </td>
+                    </tr>
+                </table>
+            </form>
+    </body>
+
+    </html>      
